@@ -1,7 +1,7 @@
 function SamanthaScale(tonic, scale) {
   var scaleName, i;
 
-  if (!(tonic instanceof samanthaNote)) {
+  if (!(tonic instanceof SamanthaNote)) {
     throw new Error('Invalid Tonic');
   }
 

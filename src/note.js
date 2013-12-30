@@ -78,12 +78,12 @@ SamanthaNote.prototype = {
   },
 
   /**
-   * Returns a samanthaChord object with this note as root
+   * Returns a SamanthaChord object with this note as root
    */
   chord: function(chord) {
     chord = (chord in kChordShort) ? kChordShort[chord] : chord;
 
-    return new samanthaChord(this, chord);
+    return new SamanthaChord(this, chord);
   },
 
   /**
