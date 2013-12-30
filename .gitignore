@@ -1,8 +1,15 @@
-# Ignore node modules
-node_modules/
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
 
-# Ignore build files
-dist/
+pids
+logs
+results
 
-# Ignore my sandbox file
-index.html
+npm-debug.log
+node_modules
