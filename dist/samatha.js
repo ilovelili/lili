@@ -539,7 +539,7 @@
       },
     
       solfege: function(scale, showOctaves) {
-        if (!(scale instanceof samanthaScale)) {
+        if (!(scale instanceof SamanthaScale)) {
           throw new Error('Invalid Scale');
         }
     

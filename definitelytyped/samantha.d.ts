@@ -24,19 +24,32 @@ declare module Samantha {
         fq(): number;
         chroma(): number;
         scale(scale: ISamanthaScale): ISamanthaScale;
-
+        interval(interval: ISamanthaInterval): ISamanthaInterval;
+        transpose(interval: ISamanthaInterval): ISamanthaNote;
+        chord(chord: ISamanthaChord): ISamanthaChord;
+        helmholtz(): string;
+        scientific(): string;
+        enharmonics(): ISamanthaNote[];
+        solfege(scale: ISamanthaScale, showOctaves: boolean): string;
+        durationName(): string;
+        durationInSeconds(bpm: number, beatUnit: number): number;
+        scaleDegree(scale: ISamanthaScale): number;
+        toString(displayOctave: boolean): string;
     }
 
     interface ISamanthaChord {
-        
+        notes(): ISamanthaNote[];
+        voicing(voicing: ISamanthaInterval[]): ISamanthaInterval[];
+        resetVoicing(): void;
+
     }
 
     interface ISamanthaInterval {
-        
+
     }
 
     interface ISamanthaScale {
-        
+
     }
 
     interface ISamanthaStatic {
