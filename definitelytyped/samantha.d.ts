@@ -41,21 +41,52 @@ declare module Samantha {
         notes(): ISamanthaNote[];
         voicing(voicing: ISamanthaInterval[]): ISamanthaInterval[];
         resetVoicing(): void;
-
+        dominant(additional: string): ISamanthaChord;
+        subdominant(additional: string): ISamanthaChord;
+        parallel(additional: string): ISamanthaChord;
+        quality() : string;
+        chordType() : string;
+        get(interval: ISamanthaInterval): ISamanthaNote;
+        interval(interval: ISamanthaInterval): SamanthaChord;
+        transpose(interval: ISamanthaInterval): ISamanthaInterval;
+        toString(): string;
     }
 
     interface ISamanthaInterval {
-
+        name(): string;
+        semitones(): number;
+        number(): number;
+        value(): number;
+        type(): string;
+        base(): string;
+        direction(): string;
+        simple(): string;
+        compound(ignore: boolean): string;
+        isCompound(): boolean;
+        octaves(): number;
+        invert(): ISamanthaInterval;
+        quality(): string;
+        qualityValue(): int;
+        equal(): boolean;
+        greater(): boolean;
+        smaller(): boolean;
+        toString(): string;
     }
 
     interface ISamanthaScale {
-
+        notes(): ISamanthaNote[];
+        simple() : string[];
+        type(): string;
+        get(i: number): ISamanthaNote;
+        solfege(index: number, showOctaves: boolean): string;
+        interval(interval: ISamanthaInterval): ISamanthaScale;
+        transpose(interval: ISamthaInterval): ISamanthaScale;
     }
 
     interface ISamanthaStatic {
         note(note: any, duration: any): ISamanthaNote;
-
-
-
+        chord(chord: string, symbol: any): ISamanthaChord;
+        interval(from: any, to: any): ISamanthaInterval;
+        scale(tonic: any, scale: scale): ISamanthaScale;
     }
 }
